@@ -1,0 +1,13 @@
+========== Revenue Forecast Executive Summary ==========
+Total Forecast : $31,051,682
+Total Actual   : $31,116,956
+Total Variance : $65,274 USD (+0.21%)
+
+Customer Success       1.7% over forecast  ($+67,235 USD)
+Finance                0.7% over forecast  ($+25,759 USD)
+HR                     0.4% under forecast  ($-13,708 USD)
+IT                     0.2% under forecast  ($-5,849 USD)
+Marketing              2.7% over forecast  ($+100,179 USD)
+Operations             2.5% under forecast  ($-101,873 USD)
+R&D                    0.3% under forecast  ($-12,371 USD)
+Sales                  0.2% over forecast  ($+5,902 USD)
