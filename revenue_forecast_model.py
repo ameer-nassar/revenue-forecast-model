@@ -16,7 +16,7 @@ import matplotlib.ticker as ticker
 df = pd.read_csv("revenue_forecasting_dataset.csv")
 
 # Convert Month to datetime and numeric for sorting
-df['Month_dt'] = pd.to_datetime(df['Month'], format='%b-%y')
+df['Month_dt'] = pd.to_datetime(df['Month'])  # Let pandas infer format
 df['Month_Num'] = df['Month_dt'].dt.month
 df.sort_values(by=['Department', 'Month_dt'], inplace=True)
 
