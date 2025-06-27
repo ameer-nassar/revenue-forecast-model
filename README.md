@@ -17,9 +17,9 @@ Accurately tracking department-level revenue forecasts using real-world FP&A pri
 
 | Plot | Filename                                  | Description                                      |
 |------|-------------------------------------------|--------------------------------------------------|
-| **1** | `plot1_actual_vs_forecast_by_dept.png`     | Total Actual vs Forecast by Department (bar)     |
+| **1** | `plot1_forecast_vs_actual_by_dept.png`     | Total Forecast vs Actual by Department (bar)     |
 | **2** | `plot2_avg_forecast_deviation_by_dept.png` | Avg Forecast Deviation % by Department (bar)     |
-| **3** | `plot3_monthly_actual_vs_forecast.png`     | Actual vs Forecast by Month (facet grid)         |
+| **3** | `plot3_monthly_forecast_vs_actaul.png`     | Forecast vs Actual by Month (facet grid)         |
 | **4** | `plot4_smoothed_forecast_accuracy_by_dept.png` | Smoothed Forecast Accuracy (12-month trend) |
 | **Text** | `executive_summary.txt`                    | Executive KPI summary (auto-generated)           |
 
@@ -29,19 +29,19 @@ Accurately tracking department-level revenue forecasts using real-world FP&A pri
 
 | Plot 1 | Plot 2 |
 |--------|--------|
-| ![Plot 1](plot1_actual_vs_forecast_by_dept.png) | ![Plot 2](plot2_avg_forecast_deviation_by_dept.png) |
+| ![Plot 1](plot1_forecast_vs_actual_by_dept.png) | ![Plot 2](plot2_avg_forecast_deviation_by_dept.png) |
 
 | Plot 3 | Plot 4 |
 |--------|--------|
-| ![Plot 3](plot3_monthly_actual_vs_forecast.png) | ![Plot 4](plot4_smoothed_forecast_accuracy_by_dept.png) |
+| ![Plot 3](plot3_monthly_forecast_vs_actual.png) | ![Plot 4](plot4_smoothed_forecast_accuracy_by_dept.png) |
 
 ---
 
 ## Output Files
 
-- `plot1_actual_vs_forecast_by_dept.png`
+- `plot1_forecast_vs_actual_by_dept.png`
 - `plot2_avg_forecast_deviation_by_dept.png`
-- `plot3_monthly_actual_vs_forecast.png`
+- `plot3_monthly_forecast_vs_actual.png`
 - `plot4_smoothed_forecast_accuracy_by_dept.png`
 - `executive_summary.txt`
 

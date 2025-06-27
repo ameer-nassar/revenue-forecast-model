@@ -47,7 +47,7 @@ for dept, row in grouped.iterrows():
           f"({row['Actual'] - row['Forecast']:,.0f} USD)")
 
 # ================================
-# Plot 1: Actual vs Forecast by Department (Monthly)
+# Plot 1: Forecast vs Actual by Department (Monthly)
 # ================================
 
 sns.set(style="whitegrid")
@@ -56,7 +56,7 @@ g = sns.FacetGrid(df, col='Department', col_wrap=4, height=4, sharey=True)
 def plot_actual_forecast(data, **kwargs):
     ax = plt.gca()
     sns.lineplot(data=data, x='Month_Num', y='Actual', marker='o', label='Actual', ax=ax, color='steelblue')
-    sns.lineplot(data=data, x='Month_Num', y='Forecast', marker='x', linestyle='--', label='Forecast', ax=ax, color='darkorange')
+    sns.lineplot(data=data, x='Month_Num', y='Forecast', marker='x', linestyle='--', label='Forecast', ax=ax, color='#7B3294')
     ax.set_xticks(range(1, 13))
     ax.set_xticklabels(range(1, 13))
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'${int(x/1000)}K'))
@@ -66,7 +66,7 @@ g.map_dataframe(plot_actual_forecast)
 g.set_titles("{col_name}")
 g.set_axis_labels("Month", "Revenue ($)")
 g.fig.subplots_adjust(top=0.88, hspace=0.30)
-g.fig.suptitle('Actual vs Forecast Revenue by Department (Monthly)', fontsize=16)
+g.fig.suptitle('Forecast vs Actual Revenue by Department (Monthly)', fontsize=16)
 
 # Shared legend
 handles, labels = g.axes[0].get_legend_handles_labels()
@@ -77,7 +77,7 @@ g.fig.legend(
     ncol=2, frameon=False, fontsize='medium'
 )
 
-g.savefig("plot1_actual_vs_forecast_by_dept.png", bbox_inches='tight', dpi=300)
+g.savefig("plot1_forecast_vs_actual_by_dept.png", bbox_inches='tight', dpi=300)
 plt.close()
 
 # ================================
@@ -118,7 +118,7 @@ plt.savefig("plot2_avg_forecast_deviation_by_dept.png", bbox_inches='tight', dpi
 plt.close()
 
 # ================================
-# Plot 3: Monthly Actual vs Forecast (All Departments Combined)
+# Plot 3: Monthly Forecast vs Actual (All Departments Combined)
 # ================================
 
 # Aggregate revenue by month
@@ -131,12 +131,22 @@ plt.figure(figsize=(14, 6))
 bar_width = 0.4
 x = np.arange(len(monthly_summary))
 
-# Set colors: Actual = blue, Forecast = orange
-plt.bar(x - bar_width/2, monthly_summary['Actual'], width=bar_width, label='Actual', color='steelblue')
-plt.bar(x + bar_width/2, monthly_summary['Forecast'], width=bar_width, label='Forecast', color='darkorange')
+# Set colors: Forecast = purple, Actual = blue
+plt.bar(x - bar_width/2,
+        monthly_summary['Forecast'],
+        width=bar_width,
+        label='Forecast',
+        color='#7B3294')
+
+plt.bar(x + bar_width/2,
+        monthly_summary['Actual'],
+        width=bar_width,
+        label='Actual',
+        color='steelblue')
+
 
 # Titles and labels
-plt.title('Monthly Revenue: Actual vs Forecast (All Departments)', fontsize=14)
+plt.title('Monthly Revenue: Forecast vs Actual (All Departments)', fontsize=14)
 plt.xlabel('Month')
 plt.ylabel('Revenue ($M)')
 plt.xticks(x, monthly_summary['Month_Label'], rotation=45)
@@ -153,7 +163,7 @@ plt.legend()
 plt.tight_layout()
 
 # Save figure
-plt.savefig("plot3_monthly_actual_vs_forecast.png", bbox_inches='tight', dpi=300)
+plt.savefig("plot3_monthly_forecast_vs_actual.png", bbox_inches='tight', dpi=300)
 plt.close()
 
 # ================================
